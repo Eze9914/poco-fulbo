@@ -1,0 +1,328 @@
+/*config de la pagina*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/*HEADER*/
+header {
+    background-color: #000000; /* Negro del escudo */
+    color: #ffffff; /* Blanco */
+    padding: 20px 0;
+    border-bottom: 4px solid #dc143c; /* Rojo del escudo */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(220, 20, 60, 0.5);
+    float: none; /* Cancela el float anterior */
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 10px 2px 4px rgba(220, 20, 60, 0.7);
+    margin: 0;
+}
+
+/* navegacion*/
+nav {
+    background-color: #dc143c; /* Rojo del escudo */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* MAIN */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+/*TiTULOS */
+h1 {
+    color: whitesmoke;
+    border-bottom: 3px solid #dc143c;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #000000;
+    font-size: 2em;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 5px solid #dc143c;
+}
+
+h3 {
+    color: #dc143c;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+/* PARRAFO*/
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/*IMAGEN (logo) */
+img:not(.logo) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*LISTAS*/
+ul {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+/*SECCIONES*/
+section {
+    margin: 30px 0 40px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #dc143c;
+    border-radius: 5px;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 4px solid #dc143c;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/*RESPONSIVE (para ver en celulares tambien)*/
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        margin: 5px 0;
+    }
+    
+    main {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+/* pagina plantel */
+
+.jugador {
+    display: flex;
+    flex-direction: column;
+    background-color: #fdeef0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid hsl(352, 73%, 41%);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.jugador:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.jugador h4 {
+    font-size: 1.3em;
+    color: #1b1b1b;
+    margin-bottom: 4px;
+}
+
+.jugador p {
+    font-size: 0.95em;
+    color: #444;
+    margin: 2px 0;
+}
+
+section h3 {
+    color: #c8102e;
+    font-size: 1.5em;
+    padding-left: 10px;
+    border-left: 5px solid #525050;
+    margin-bottom: 20px;
+}
+
+
+/* pagina contacto */
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-formulario label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    transition: border-color 0.3s;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    border-color: #dc143c;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #dc143c;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+}
+
+button[type="submit"]:hover {
+    background-color: #a80e28;
+}
+
+/* el instagram del equipo */
+
+.redes-sociales {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-left: 5px solid #dc143c;
+    border-radius: 8px;
+}
+
+.redes-sociales h3 {
+    color: #c8102e;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.redes-sociales p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.boton-instagram {
+    display: inline-block;
+    background-color: #dc143c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-instagram:hover {
+    background-color: #a80e28;
+}
+
+.boton-instagram i {
+    margin-right: 8px;
+}
+
+
+
+
+
+
