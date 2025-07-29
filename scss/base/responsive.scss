@@ -17,18 +17,18 @@
   nav ul {
     flex-direction: column;
     align-items: center;
-    
+
     li {
       margin: $spacing-xs 0;
     }
   }
-  
+
   // Main responsive
   main {
     margin: $spacing-md $spacing-sm;
     padding: $spacing-md;
   }
-  
+
   // Header responsive
   header {
     .header-container {
@@ -37,17 +37,17 @@
       }
     }
   }
-  
+
   // Logo con animación en móvil
   .logo {
     animation: pulse 2s infinite;
   }
-  
+
   // Jugadores responsive
   .jugador {
     padding: $spacing-sm 15px;
   }
-  
+
   // Formularios responsive
   .formulario-contacto {
     .campo-formulario {
@@ -56,4 +56,13 @@
       }
     }
   }
+
+  // Corrección de alineación de texto para mejorar lectura en móvil
+  p {
+  text-align: left !important;
+  hyphens: auto;
+  word-break: break-word;
 }
+
+  }
+  

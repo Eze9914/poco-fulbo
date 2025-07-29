@@ -417,6 +417,11 @@ ul li:hover {
   .formulario-contacto .campo-formulario input, .formulario-contacto .campo-formulario textarea {
     font-size: 16px;
   }
+  p {
+    text-align: left !important;
+    hyphens: auto;
+    word-break: break-word;
+  }
 }
 header {
   background: linear-gradient(135deg, #000000 0%, #333333 100%);
