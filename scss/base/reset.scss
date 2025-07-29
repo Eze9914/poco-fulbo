@@ -1,0 +1,28 @@
+// ========================================
+// RESET CSS
+// ========================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: 1.6;
+  color: $color-text;
+  @include gradient-bg($color-light-gray, $color-medium-gray);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+// Animación de entrada
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

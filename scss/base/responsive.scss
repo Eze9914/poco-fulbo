@@ -1,0 +1,59 @@
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+// Animación específica para móvil
+@keyframes pulse {
+  0%, 100% {
+    @include box-shadow(0 4px 8px rgba($color-primary, 0.5));
+  }
+  50% {
+    @include box-shadow(0 4px 20px rgba($color-primary, 0.8));
+  }
+}
+
+@include responsive(mobile) {
+  // Navegación móvil
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    
+    li {
+      margin: $spacing-xs 0;
+    }
+  }
+  
+  // Main responsive
+  main {
+    margin: $spacing-md $spacing-sm;
+    padding: $spacing-md;
+  }
+  
+  // Header responsive
+  header {
+    .header-container {
+      h1 {
+        font-size: $font-size-medium;
+      }
+    }
+  }
+  
+  // Logo con animación en móvil
+  .logo {
+    animation: pulse 2s infinite;
+  }
+  
+  // Jugadores responsive
+  .jugador {
+    padding: $spacing-sm 15px;
+  }
+  
+  // Formularios responsive
+  .formulario-contacto {
+    .campo-formulario {
+      input, textarea {
+        font-size: 16px; // Evita zoom en iOS
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+// ========================================
+// MIXINS PRINCIPALES
+// ========================================
+@mixin gradient-bg($color1, $color2, $direction: 135deg) {
+  background: linear-gradient($direction, $color1 0%, $color2 100%);
+}
+
+@mixin transition($properties: all, $duration: 0.3s, $easing: ease) {
+  transition: $properties $duration $easing;
+}
+
+@mixin box-shadow($shadows...) {
+  box-shadow: $shadows;
+}
+
+@mixin hover-lift($lift: -2px) {
+  &:hover {
+    transform: translateY($lift);
+  }
+}
+
+@mixin button-style($bg-color: $color-primary, $text-color: $color-white) {
+  @include gradient-bg($bg-color, darken($bg-color, 10%));
+  color: $text-color;
+  padding: 12px 20px;
+  border: none;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  @include transition(all);
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    @include gradient-bg(darken($bg-color, 15%), darken($bg-color, 20%));
+    transform: translateY(-2px);
+    @include box-shadow(0 4px 12px rgba($bg-color, 0.4));
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  }
+}

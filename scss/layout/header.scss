@@ -1,0 +1,76 @@
+// ========================================
+// HEADER
+// ========================================
+header {
+  @include gradient-bg($color-secondary, $color-secondary-light);
+  color: $color-white;
+  padding: $spacing-md 0;
+  border-bottom: 4px solid $color-primary;
+  @include box-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
+  
+  .header-container {
+    @extend %container-base;
+    @include flex-center;
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin-right: $spacing-md;
+      border-radius: 50%;
+      @include box-shadow(0 4px 8px rgba($color-primary, 0.5));
+      @include transition(transform);
+      
+      &:hover {
+        transform: scale(1.1) rotate(5deg);
+        @include box-shadow(0 8px 20px rgba($color-primary, 0.8));
+      }
+    }
+    
+    h1 {
+      font-size: $font-size-large;
+      font-weight: bold;
+      text-shadow: 10px 2px 4px rgba($color-primary, 0.7);
+      margin: 0;
+      @include transition(text-shadow);
+      
+      &:hover {
+        text-shadow: 5px 5px 15px $color-primary;
+      }
+    }
+  }
+}
+
+// NAVEGACIÓN
+nav {
+  @include gradient-bg($color-primary, $color-primary-dark);
+  padding: 15px 0;
+  @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+  
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    li {
+      margin: 0 15px;
+      
+      a {
+        color: $color-white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: $font-size-base;
+        padding: $spacing-sm 15px;
+        border-radius: $border-radius-sm;
+        @include transition(all);
+        
+        &:hover {
+          background-color: $color-secondary;
+          color: $color-white;
+          transform: translateY(-2px);
+          @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+      }
+    }
+  }
+}

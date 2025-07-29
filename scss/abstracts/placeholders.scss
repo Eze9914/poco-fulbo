@@ -1,0 +1,66 @@
+// ========================================
+// PLACEHOLDERS (EXTEND)
+// ========================================
+%container-base {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+%card-base {
+  background-color: $color-white;
+  border-radius: $border-radius-lg;
+  @include box-shadow($box-shadow-light);
+  @include transition(box-shadow);
+  
+  &:hover {
+    @include box-shadow($box-shadow-heavy);
+  }
+}
+
+%text-gradient {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Generación dinámica de clases con @each
+$social-colors: (
+  instagram: #E4405F,
+  facebook: #3b5998,
+  twitter: #1da1f2,
+  youtube: #ff0000
+);
+
+@each $social, $color in $social-colors {
+  .social-#{$social} {
+    @include button-style($color);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      @include transition(left, 0.5s);
+    }
+    
+    &:hover::before {
+      left: 100%;
+    }
+  }
+}
+
+// Generar clases de espaciado dinámicamente
+$spacings: 5, 10, 15, 20, 25, 30, 40;
+@each $spacing in $spacings {
+  .m-#{$spacing} { margin: #{$spacing}px; }
+  .mt-#{$spacing} { margin-top: #{$spacing}px; }
+  .mb-#{$spacing} { margin-bottom: #{$spacing}px; }
+  .p-#{$spacing} { padding: #{$spacing}px; }
+  .pt-#{$spacing} { padding-top: #{$spacing}px; }
+  .pb-#{$spacing} { padding-bottom: #{$spacing}px; }
+}

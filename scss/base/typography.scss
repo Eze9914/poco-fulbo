@@ -1,0 +1,59 @@
+// ========================================
+// TIPOGRAFÍA
+// ========================================
+h1 {
+  color: $color-white;
+  border-bottom: 3px solid $color-primary;
+  padding-bottom: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+h2 {
+  color: $color-secondary;
+  font-size: $font-size-medium;
+  margin-bottom: 15px;
+  padding-left: $spacing-sm;
+  border-left: 5px solid $color-primary;
+  @include transition(color, border-left-color);
+  
+  &:hover {
+    color: $color-primary;
+    border-left-color: $color-secondary;
+  }
+}
+
+h3 {
+  color: $color-primary;
+  font-size: $font-size-small;
+  margin-bottom: $spacing-sm;
+  margin-top: 25px;
+  @include transition(color);
+  
+  &:hover {
+    color: $color-primary-darker;
+  }
+}
+
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+  font-size: $font-size-base;
+  line-height: 1.7;
+  @include transition(color);
+}
+
+// Listas
+ul {
+  margin: $spacing-md 0;
+  padding-left: $spacing-lg;
+  
+  li {
+    margin-bottom: 8px;
+    font-size: $font-size-base;
+    @include transition(color);
+    
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

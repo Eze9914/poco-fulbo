@@ -1,0 +1,63 @@
+// ========================================
+// BOTONES
+// ========================================
+button[type="submit"] {
+  @include button-style();
+  font-size: $font-size-base;
+  align-self: flex-start;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    @include transition(width, height, 0.6s);
+    transform: translate(-50%, -50%);
+  }
+  
+  &:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// Botón Instagram y redes sociales
+.boton-instagram {
+  @extend .social-instagram;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  
+  i {
+    margin-right: 8px;
+  }
+}
+
+.redes-sociales {
+  margin-top: $spacing-xl;
+  padding: $spacing-md;
+  @include gradient-bg(#f0f0f0, $color-medium-gray);
+  border-left: 5px solid $color-primary;
+  border-radius: $border-radius-md;
+  @include transition(transform, box-shadow);
+  @include hover-lift();
+  
+  &:hover {
+    @include box-shadow(0 6px 15px rgba(0, 0, 0, 0.1));
+  }
+  
+  h3 {
+    color: #c8102e;
+    font-size: 1.4em;
+    margin-bottom: $spacing-sm;
+  }
+  
+  p {
+    font-size: $font-size-base;
+    margin-bottom: 15px;
+  }
+}

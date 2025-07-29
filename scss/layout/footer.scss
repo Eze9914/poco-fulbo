@@ -1,0 +1,22 @@
+// ========================================
+// FOOTER
+// ========================================
+footer {
+  @include gradient-bg($color-secondary, $color-secondary-light);
+  color: $color-white;
+  text-align: center;
+  padding: $spacing-md;
+  margin-top: $spacing-xl;
+  border-top: 4px solid $color-primary;
+  @include box-shadow(0 -4px 15px rgba(0, 0, 0, 0.3));
+  
+  p {
+    margin: 0;
+    font-size: 0.9em;
+    @include transition(color);
+    
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
